@@ -79,7 +79,26 @@ void inserir_no_meio(Lista *lista, int num, int ant){
     else
         printf("Erro ao alocar memoria!\n");
 }
-
+void inserirnaPOs(Lista *l, int valor, int i){
+    No *aux, *novo = malloc(sizeof(No));
+    int z=0;
+    if(novo){
+        novo->valor = valor;
+        novo->proximo = NULL;
+        if(l->inicio ==NULL){
+            l->inicio=novo;
+        }
+        else{
+            aux = l->inicio;
+            while(aux->proximo!=NULL && z < i){
+                z++;
+                aux = aux->proximo;
+            }
+            novo->proximo = aux->proximo;
+            aux->proximo = novo;
+        }
+    }
+}
 void inserir_ordenado(Lista *lista, int num){
     No *aux, *novo = malloc(sizeof(No));
 
