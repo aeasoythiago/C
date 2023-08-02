@@ -182,7 +182,7 @@ bool removerDaPos(ITEM *item,int i, LISTA *l){
         }   
         else{
             no = l->cabeca;
-            for(int n = 0;n<i;n++){
+            for(int n = 1;n<i;n++){
                 no = no->prox;
             }
             remover = no->prox;
