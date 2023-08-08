@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef int TIPOCHAVE;
+
+typedef struct {
+    TIPOCHAVE chave;
+} ITEM;
+
+typedef struct estrutura {
+    ITEM item;
+    struct estrutura *prox;
+} NO;
+
+typedef struct {
+    NO *cabeca;
+    int tamanho;
+} LISTA;
+
+void inverterLista(LISTA *lista) {
+    NO *anterior = NULL;
+    NO *atual = lista->cabeca;
+    NO *proximo = NULL;
+
+    while (atual != NULL) {
+        proximo = atual->prox;
+        atual->prox = anterior;
+        anterior = atual;
+        atual = proximo;
+    }
+
+    lista->cabeca = anterior;
+}
+
