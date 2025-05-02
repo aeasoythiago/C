@@ -62,7 +62,7 @@ int main() {
         printf("7. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &a);
-        getchar(); // limpar buffer
+        getchar();
 
         switch (a) {
             case 1:
@@ -73,7 +73,7 @@ int main() {
                     scanf("%d", &alunos[quantidade].idade);
                     printf("Digite sua maior nota:\n");
                     scanf("%f", &alunos[quantidade].nota);
-                    getchar(); // limpar buffer
+                    getchar(); 
                     quantidade++;
                 } else {
                     printf("Limite de alunos atingido.\n");
@@ -92,7 +92,7 @@ int main() {
             case 3: {
                 int encontrado = 0;
                 printf("Digite o nome do aluno:\n");
-                scanf(" %[^\n]", nome3); // lê até a quebra de linha
+                scanf(" %[^\n]", nome3); 
                 for (i = 0; i < quantidade; i++) {
                     if (strcmp(alunos[i].nome, nome3) == 0) {
                         printf("Nome completo: %s\n", alunos[i].nome);
